@@ -112,10 +112,11 @@ SOFTWARE.
 
 // Buttons (optional, for comfort)
 #define PIN_BUTTON_DOWN 4
-#define PIN_BUTTON_SAVE 5
+#define PIN_BUTTON_OSDSWITCH 5
 
 #define PIN_LED 13
 #define PIN_BUZZER 6 // Must be an active buzzer, not passive.
+#define PIN_OSDCONTROL 8
 
 #define PIN_SPI_DATA 10
 #define PIN_SPI_SLAVE_SELECT 11
