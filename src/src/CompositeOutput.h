@@ -180,15 +180,22 @@ class CompositeOutput
   }
   
   void startOutput()
-  {
+  { 
+    
+    i2s_set_dac_mode(I2S_DAC_CHANNEL_RIGHT_EN);
     i2s_start(I2S_PORT);
   }
   
   void stopOutput()
   {
+    
     i2s_stop(I2S_PORT);
+    i2s_set_dac_mode(I2S_DAC_CHANNEL_DISABLE);
+    pinMode(25,INPUT);
+    gpio_pulldown_dis(GPIO_NUM_25);
+    gpio_pullup_dis(GPIO_NUM_25);
+    gpio_set_pull_mode(GPIO_NUM_25,GPIO_FLOATING);
   }
-
   void sendLine()
   {
     esp_err_t error = ESP_OK;
